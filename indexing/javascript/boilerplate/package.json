@@ -1,11 +1,11 @@
 {
   "name": "algolia-onboarding-training-indexing",
   "version": "1.0.0",
-  "description": "Boilerplate for JavaScript indexing scripts ===============================================",
+  "description": "Boilerplate for JavaScript indexing scripts",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
-  "author": "",
+  "author": "Jérôme Cohonner",
   "license": "ISC"
 }
