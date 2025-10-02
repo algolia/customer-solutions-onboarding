@@ -4,7 +4,7 @@
   "description": "Boilerplate for JavaScript indexing scripts",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "run": "node index.js"
   },
   "author": "Jérôme Cohonner",
   "license": "ISC"
