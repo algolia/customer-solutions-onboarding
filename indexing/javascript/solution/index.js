@@ -143,4 +143,4 @@ async function sendToAlgoliaWithTransformation(indexName, file) {
   console.log(`Indexed ${data.length} records to ${indexName}`);
 }
 
-sendToAlgoliaWithTransformation(moviesIndexName, moviesFileURL);
+// sendToAlgoliaWithTransformation(moviesIndexName, moviesFileURL);
