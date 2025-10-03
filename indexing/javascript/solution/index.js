@@ -30,37 +30,43 @@ if (INITIALS === "YOUR INITIALS HERE") {
  * add algoliasearch to project dependancies
  * import using require
  * initialize client
- * see https://www.algolia.com/doc/libraries/javascript/v5/
+ * see https://www.algolia.com/doc/libraries/sdk/install#javascript
  */
-// const { algoliasearch } = require("");
-// const client = ;
+const { algoliasearch } = require("algoliasearch");
+const client = algoliasearch(APP_ID, API_KEY, {
+  transformation: { region: "eu" },
+});
 
 /***
  * Step 3: send all data to Algolia
- * see see https://ww.algolia.com/doc/Libraries/javascript/v5/helpers/#save-records
+ * see https://www.algolia.com/doc/libraries/sdk/methods/search/save-objects
  */
 async function sendToAlgolia(indexName, file) {
   //Read data from Github URL
   const data = await fetch(file)
     .then((response) => response.json())
     .catch((error) => console.log(error));
-  // CODE HERE
+
+  await client.saveObjects({ indexName, objects: data });
+
   console.log(`Indexed ${data.length} records to ${indexName}`);
 }
 
-// sendToAlgolia(moviesIndexName, moviesFileURL);
-// sendToAlgolia(actorsIndexName, actorsFileURL);
-// sendToAlgolia(categoriesIndexName, categoriesFileURL);
+//sendToAlgolia(moviesIndexName, moviesFileURL);
+//sendToAlgolia(actorsIndexName, actorsFileURL);
+//sendToAlgolia(categoriesIndexName, categoriesFileURL);
 
 /**
  * Step 4: add or replace a single record
  * make a few changess to the record in pulpfiction.json and send it to Algolia
- * see https://www.algolia.com/doc/Libraries/javascript/v5/methods/search/save-object/
+ * see https://www.algolia.com/doc/libraries/sdk/methods/search/add-or-update-object
  */
 async function replacePulpFictionObject() {
   //read pulpfiction object from local file
   const pulpfiction = require("./data/pulpfiction.json");
-  // CODE HERE
+
+  await client.saveObject({ indexName: moviesIndexName, body: pulpfiction });
+
   console.log(`Replaced record with objectID ${pulpfiction.objectID}`);
 }
 
@@ -68,11 +74,13 @@ async function replacePulpFictionObject() {
 
 /**
  * Step 5: delete a single record
- * see https://www.algolia.com/doc/Libraries/javascript/v5/methods/search/delete-object/
+ * see https://www.algolia.com/doc/libraries/sdk/methods/search/delete-object
  */
 async function deleteSingleObject() {
-  const objectID = "123456";
-  // CODE HERE
+  const objectID = "9994";
+
+  await client.deleteObject({ indexName: moviesIndexName, objectID });
+
   console.log(`Deleted record with objectID ${objectID}`);
 }
 
@@ -100,7 +108,12 @@ async function applySettings() {
       "searchable(categoryPageIdentifiers)",
     ],
   };
-  // CODE HERE
+
+  await client.setSettings({
+    indexName: moviesIndexName,
+    indexSettings: settings,
+  });
+
   console.log(`Applied settings ${JSON.stringify(settings)}`);
 }
 
@@ -119,8 +132,15 @@ async function sendToAlgoliaWithTransformation(indexName, file) {
   const data = await fetch(file)
     .then((response) => response.json())
     .catch((error) => console.log(error));
-  // CODE HERE
+
+  client.initIngestion;
+
+  await client.replaceAllObjectsWithTransformation({
+    indexName,
+    objects: data,
+  });
+
   console.log(`Indexed ${data.length} records to ${indexName}`);
 }
 
-// sendToAlgoliaWithTransformation(moviesIndexName, moviesFileURL);
+sendToAlgoliaWithTransformation(moviesIndexName, moviesFileURL);

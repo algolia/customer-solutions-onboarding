@@ -1,0 +1,14 @@
+{
+  "name": "algolia-onboarding-training-indexing",
+  "version": "1.0.0",
+  "description": "Boilerplate for JavaScript indexing scripts",
+  "main": "index.js",
+  "scripts": {
+    "run": "node index.js"
+  },
+  "author": "Jérôme Cohonner",
+  "license": "ISC",
+  "dependencies": {
+    "algoliasearch": "^5.39.0"
+  }
+}
