@@ -133,8 +133,6 @@ async function sendToAlgoliaWithTransformation(indexName, file) {
     .then((response) => response.json())
     .catch((error) => console.log(error));
 
-  client.initIngestion;
-
   await client.replaceAllObjectsWithTransformation({
     indexName,
     objects: data,
