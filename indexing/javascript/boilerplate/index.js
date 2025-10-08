@@ -55,7 +55,7 @@ async function sendToAlgolia(indexName, file) {
 /**
  * Step 4: add or replace a single record
  * make a few changess to the record in pulpfiction.json and send it to Algolia
- * see https://www.algolia.com/doc/Libraries/javascript/v5/methods/search/save-object/
+ * see https://www.algolia.com/doc/libraries/sdk/methods/search/save-objects
  */
 async function replacePulpFictionObject() {
   //read pulpfiction object from local file
@@ -67,8 +67,23 @@ async function replacePulpFictionObject() {
 //replacePulpFictionObject();
 
 /**
- * Step 5: delete a single record
- * see https://www.algolia.com/doc/Libraries/javascript/v5/methods/search/delete-object/
+ * Step 5: Update a single attribute in a record
+ * make a few changess to the record in pulpfiction.json and send it to Algolia
+ * see https://www.algolia.com/doc/libraries/sdk/methods/search/save-object
+ */
+
+async function partialUpdatePulpFictionObject() {
+  //read pulpfiction object from local file
+  const pulpfiction = require("./data/pulpfiction.json");
+  // CODE HERE
+  console.log(`Partially updated record with objectID ${pulpfiction.objectID}`);
+}
+
+//partialUpdatePulpFictionObject();
+
+/**
+ * Step 6: delete a single record
+ * see https://www.algolia.com/doc/libraries/sdk/methods/search/delete-object
  */
 async function deleteSingleObject() {
   const objectID = "123456";
@@ -79,7 +94,7 @@ async function deleteSingleObject() {
 //deleteSingleObject();
 
 /**
- * Step 6: apply basic settings
+ * Step 7: apply basic settings
  * see https://www.algolia.com/doc/libraries/sdk/methods/search/set-settings
  * see https://www.algolia.com/doc/api-reference/settings-api-parameters
  */
@@ -107,7 +122,7 @@ async function applySettings() {
 //applySettings();
 
 /**
- * Step 7: Use Algolia transformItems to modify records at indexing time
+ * Step 8: Use Algolia transformItems to modify records at indexing time
  * You'll need first to create a push connector in the dashboard with your index as a destination and a custom transformation
  * see https://www.algolia.com/doc/guides/sending-and-managing-data/send-and-update-your-data/connectors/push
  * then push the records using the dedicated method
