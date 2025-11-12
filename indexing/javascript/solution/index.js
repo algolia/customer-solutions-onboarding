@@ -127,6 +127,7 @@ async function applySettings() {
       "searchable(genres)",
       "searchable(directors)",
       "searchable(categoryPageIdentifiers)",
+      "on_sale",
     ],
   };
 

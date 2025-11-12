@@ -1,6 +1,8 @@
 import json
 import logging
 import requests
+from algoliasearch.search.client import SearchClientSync
+from algoliasearch.search.config import SearchConfig
 
 MOVIES_FILE_URL = "https://raw.githubusercontent.com/algolia/customer-solutions-onboarding/main/indexing/assets/movies.json"
 ACTORS_FILE_URL = "https://raw.githubusercontent.com/algolia/customer-solutions-onboarding/main/indexing/assets/actors.json"
@@ -26,7 +28,11 @@ if INITIALS == "YOUR_INITIALS_HERE":
 # Import SearchClientSync and initialize the client
 # See https://www.algolia.com/doc/libraries/sdk/install#python
 
-# client = ...
+
+config = SearchConfig(app_id=APP_ID, api_key=API_KEY)
+config.set_transformation_region(region="eu")
+client = SearchClientSync.create_with_config(config=config)
+
 
 # Step 3: Send all data to Algolia
 # See https://www.algolia.com/doc/libraries/sdk/methods/search/save-objects
@@ -40,7 +46,11 @@ def send_to_algolia(index_name, file_url):
         data = None
 
     # Add data to Algolia
-    # CODE HERE 
+    client.save_objects(
+        index_name=index_name,
+        objects = data
+    )
+
     print(f"Indexed {len(data)} records to {index_name}")
     pass
 
@@ -54,8 +64,11 @@ def replace_pulp_fiction_object():
     with open("./data/pulpfiction.json") as f:
         pulp_fiction = json.load(f)
     
-    # CODE HERE
-    
+    client.save_object(
+        index_name=MOVIES_INDEX_NAME,
+        body=pulp_fiction
+    )
+
     print(f'Replaced record with objectID {pulp_fiction["objectID"]}')
     pass
 
@@ -67,8 +80,14 @@ def partial_update_pulp_fiction():
     with open("./data/pulpfiction.json") as f:
         pulp_fiction = json.load(f)
 
-    # CODE HERE
-    
+    client.partial_update_object(
+        index_name=MOVIES_INDEX_NAME,
+        object_id=pulp_fiction["objectID"],
+        attributes_to_update= {
+            "vote_average":9
+        }
+    )
+
     print(f'Updated record with objectID {pulp_fiction["objectID"]}')
     pass
 
@@ -77,7 +96,10 @@ def partial_update_pulp_fiction():
 # Step 6: Delete a record
 # See https://www.algolia.com/doc/libraries/sdk/methods/search/delete-object
 def delete_object():
-    # CODE HERE
+    client.delete_object(
+        index_name=MOVIES_INDEX_NAME,
+        object_id=906221
+    )
     print(f'Record deleted')
     pass
 
@@ -92,7 +114,10 @@ def apply_settings():
         "searchableAttributes": ["title","actors","director","categories","overview"],
         "attributesForFaceting": ["searchable(categories)", "searchable(actors)", "searchable(director)","searchable(categoryPageIdentifiers)","on_sale"],
     }
-    # CODE HERE
+    client.set_settings(
+        index_name=MOVIES_INDEX_NAME,
+        index_settings=settings
+    )
     print(f'Settings applied')
     pass
 
@@ -108,16 +133,19 @@ def apply_settings():
 # config.set_transformation_region(region="eu")
 # client = SearchClientSync.create_with_config(config=config)
 def replace_all_objects_with_transformation():
-    # Read data from file_url
+    # Read data from movies file url
     try:
         response = requests.get(MOVIES_FILE_URL)
         data = response.json()
     except Exception as e:
         logging.error(f"Failed to fetch or parse data: {e}")
         data = None
-    # CODE HERE
-    print(f"Indexed {len(data)} records to {MOVIES_INDEX_NAME}")
+        
+    client.replace_all_objects_with_transformation(
+        index_name=MOVIES_INDEX_NAME,
+        objects= data
+    )
     pass
 
-# replace_all_objects_with_transformation()
+replace_all_objects_with_transformation()
 

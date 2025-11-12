@@ -37,7 +37,7 @@ if (INITIALS === "YOUR INITIALS HERE") {
 
 /***
  * Step 3: send all data to Algolia
- * see see https://ww.algolia.com/doc/Libraries/javascript/v5/helpers/#save-records
+ * see see https://www.algolia.com/doc/libraries/sdk/methods/search/save-objects
  */
 async function sendToAlgolia(indexName, file) {
   //Read data from Github URL
@@ -55,7 +55,7 @@ async function sendToAlgolia(indexName, file) {
 /**
  * Step 4: add or replace a single record
  * make a few changess to the record in pulpfiction.json and send it to Algolia
- * see https://www.algolia.com/doc/libraries/sdk/methods/search/save-objects
+ * see https://www.algolia.com/doc/libraries/sdk/methods/search/save-object
  */
 async function replacePulpFictionObject() {
   //read pulpfiction object from local file
@@ -69,7 +69,7 @@ async function replacePulpFictionObject() {
 /**
  * Step 5: Update a single attribute in a record
  * make a few changess to the record in pulpfiction.json and send it to Algolia
- * see https://www.algolia.com/doc/libraries/sdk/methods/search/save-object
+ * see https://www.algolia.com/doc/libraries/sdk/methods/search/partial-update-object
  */
 
 async function partialUpdatePulpFictionObject() {
@@ -113,6 +113,7 @@ async function applySettings() {
       "searchable(genres)",
       "searchable(directors)",
       "searchable(categoryPageIdentifiers)",
+      "on_sale",
     ],
   };
   // CODE HERE
