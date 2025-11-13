@@ -11,6 +11,11 @@ In this training we will learn how to implement Algolia in your website. We will
 
 This react project is a basic "almost" plain HTML Algoflix version with a pre-configured router (search, category pages, movie page) and fake components reproducing Algolia InstantSearch default components HTML.
 
+# How to use
+
+You can either use this boilerplate locally or in codesandbox.
+Fork in codesandbox : https://codesandbox.io/s/github/algolia/customer-solutions-onboarding/tree/main/building-the-ui/react/boilerplate
+
 ## Let's get started
 
 first, fork the provided repository. Then, using the dependencies section of codesanbox, include [algoliasearch](https://www.npmjs.com/package/algoliasearch) (>= v5) and [react-instantsearch](https://www.npmjs.com/package/react-instantsearch) (>= v7)
