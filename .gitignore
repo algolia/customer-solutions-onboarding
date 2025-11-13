@@ -3,3 +3,6 @@ node_modules/
 .env
 .vscode/
 dist/
+.yarn/
+.pnp.*
+yarn.lock
