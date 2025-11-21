@@ -50,14 +50,6 @@ export default function Header() {
             >
               Action
             </a>
-
-            <a
-              href="#"
-              onClick={() => navigate("/category/comedy")}
-              className="text-sm font-light hover:text-gray-300"
-            >
-              Comedy
-            </a>
           </div>
         </div>
 

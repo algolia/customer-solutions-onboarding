@@ -10,7 +10,7 @@ export default function Search() {
 
   return (
     <div>
-      <h1>Search</h1>
+      <h1 className="text-3xl md:text-5xl font-bold mb-4">Search</h1>
 
       <SearchBox placeholder="search for movies, actors, directors" />
 
