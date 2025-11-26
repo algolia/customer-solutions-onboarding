@@ -7,16 +7,14 @@ In this training we will learn how to implement Algolia in your website. We will
   - for category pages
 - how to implement Autocomplete.js
 - how to send events to Algolia
-- how to implement carrousels
+- how to implement Recommend carrousels
 
-This project is a vanilla JS Algoflix with pages for home, search, category pages and movie detail page.
-It makes use of a simple vanilla JS router (navigo) in order to have a single `index.html` entry point.
-Each page has its own js file in `src/pages/` with a template and a run method that will be executed at page load after the template being rendered.
+This project is a single page application vanilla JS Algoflix with pages for home, search, category pages and movie detail page. In order to have a navigation we used a simple vanilla JS router (navigo). Each page has its own js file in `src/pages/` with a template and a run method that will be executed at page load.
 
 # How to use
 
 This code is designed to be used in codesandbox.
-Fork in codesandbox : https://codesandbox.io/p/sandbox/github/algolia/customer-solutions-onboarding/tree/main/building-the-ui/javascript/boilerplate
+Fork in codesandbox : https://codesandbox.io/p/sandbox/github/algolia/customer-solutions-onboarding/tree/main/building-the-ui/javascript/solution
 
 ## Let's get started
 

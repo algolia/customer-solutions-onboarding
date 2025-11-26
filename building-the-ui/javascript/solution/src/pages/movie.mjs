@@ -28,7 +28,33 @@ export function run(args) {
       //do nothing
     });
 
-  window.handleBuy = (objectID, price) => {};
+  //send View event
+  window.aa("viewedObjectIDs", {
+    index: config.moviesIndexName,
+    eventName: "Movie Viewed",
+    objectIDs: [movieID],
+  });
+
+  window.handleBuy = (objectID, price) => {
+    window.aa(
+      "purchasedObjectIDs",
+      {
+        index: config.moviesIndexName,
+        eventName: "Movie puchased",
+        objectIDs: [objectID.toString()],
+        objectData: [
+          {
+            price,
+            discount: 9.99 - price,
+            quantity: 1,
+          },
+        ],
+        value: price,
+        currency: "USD",
+      },
+      { inferQueryID: true }
+    );
+  };
 }
 
 // Helper function to format date from timestamp
