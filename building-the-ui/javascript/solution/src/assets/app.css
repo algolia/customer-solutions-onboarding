@@ -337,3 +337,7 @@ body {
 .aa-GradientBottom {
   display: none;
 }
+
+.aa-ItemContentTitle mark {
+  color: white;
+}
