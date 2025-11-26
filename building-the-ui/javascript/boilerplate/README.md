@@ -15,8 +15,9 @@ Each page has its own js file in `src/pages/` with a template and a run method t
 
 # How to use
 
-This code is designed to be used in codesandbox.
+This code is designed to be used in codesandbox.io online editor.
 Fork in codesandbox : https://codesandbox.io/p/sandbox/github/algolia/customer-solutions-onboarding/tree/main/building-the-ui/javascript/boilerplate
+We recommend using Chrome based browser for best experience.
 
 ## Let's get started
 

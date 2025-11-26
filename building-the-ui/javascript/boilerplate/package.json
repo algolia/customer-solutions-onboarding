@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "The JavaScript template",
   "scripts": {
-    "start": "cp -r src/assets dist && parcel index.html",
+    "start": "parcel index.html",
     "build": "parcel build ./index.html"
   },
   "main": "src/app.js",

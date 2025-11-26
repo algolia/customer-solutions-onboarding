@@ -13,8 +13,9 @@ This project is a single page application vanilla JS Algoflix with pages for hom
 
 # How to use
 
-This code is designed to be used in codesandbox.
+This code is designed to be used in codesandbox.io online editor.
 Fork in codesandbox : https://codesandbox.io/p/sandbox/github/algolia/customer-solutions-onboarding/tree/main/building-the-ui/javascript/solution
+We recommend using Chrome based browser for best experience.
 
 ## Let's get started
 
