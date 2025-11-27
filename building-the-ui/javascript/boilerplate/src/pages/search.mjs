@@ -20,22 +20,25 @@ export const template = `
       <div class="bg-[#1f1f1f] p-4 rounded-md">
         <div>
           <h3 class="text-lg font-semibold mb-2">Actors</h3>
+          <div id="actors"></div>
           ${staticRefinementList}   
         </div>
         <div>
           <h3 class="text-lg font-semibold mb-2">Genres</h3>
+          <div id="genres"></div>
           ${staticRefinementList}   
         </div>
         <div>
           <h3 class="text-lg font-semibold mb-2">Director</h3>
+          <div id="director"></div>
           ${staticRefinementList}   
         </div>
         <div>
-        <h3 class="text-lg font-semibold mb-2">On Sales</h3>
-        ${staticToggleRefinement}
+          <h3 class="text-lg font-semibold mb-2">On Sales</h3>
+          <div id="on_sales"></div>
+          ${staticToggleRefinement}          
+        </div>      
       </div>
-      </div>
-    </div>
     <div id="hits">  
     ${staticInfiniteHits}    
   </div>
