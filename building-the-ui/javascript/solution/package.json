@@ -17,7 +17,7 @@
   "dependencies": {
     "navigo": "8.11.1",
     "algoliasearch": "5.44.0",
-    "instantsearch.js": "4.80.0",
+    "instantsearch.js": "4.86.1",
     "@algolia/autocomplete-js": "1.19.4",
     "@algolia/autocomplete-plugin-recent-searches": "1.19.4",
     "@algolia/autocomplete-preset-algolia": "1.19.4",
