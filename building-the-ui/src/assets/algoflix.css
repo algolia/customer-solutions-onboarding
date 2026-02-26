@@ -1,0 +1,128 @@
+body {
+  background: #17012c;
+}
+
+h1 {
+  margin-bottom: 1em;
+}
+
+.header {
+  /* background-image: linear-gradient(284deg, #050505, #17012c); */
+  background-image: none;
+  background-color: #17012c;
+}
+
+.header-title {
+  background: url("/src/assets/logo-algoflix-darkBG.svg") no-repeat center;
+  width: 100px;
+  height: 100px;
+}
+.header-title a {
+  display: none;
+}
+.header-title::after {
+  content: "";
+}
+
+h2,
+.hit-name,
+.hit-price {
+  color: #ffffff;
+}
+
+.ais-RefinementList,
+.ais-RangeSlider {
+  color: #cacfff;
+}
+
+.ais-ClearRefinements-button,
+.ais-CurrentRefinements-reset,
+.ais-GeoSearch-redo,
+.ais-GeoSearch-reset,
+.ais-HierarchicalMenu-showMore,
+.ais-InfiniteHits-loadMore,
+.ais-InfiniteHits-loadPrevious,
+.ais-InfiniteResults-loadMore,
+.ais-Menu-showMore,
+.ais-RefinementList-showMore {
+  background-color: #cacfff;
+}
+.ais-CurrentRefinements-item {
+  background-color: #777aaf;
+}
+.ais-ClearRefinements-button--disabled:hover {
+  background-color: #777aaf;
+}
+.ais-ClearRefinements-button {
+  background-color: #cacfff;
+}
+.ais-ClearRefinements-button:hover,
+.ais-RefinementList-showMore:hover {
+  background-color: #777aaf;
+}
+.ais-Pagination-item--selected .ais-Pagination-link {
+  background-color: #777aaf;
+  border-color: #777aaf;
+}
+.ais-Pagination-link {
+  color: #777aaf;
+}
+.ais-Pagination-link:focus,
+.ais-Pagination-link:hover {
+  color: #777aaf;
+}
+
+.ais-Hits-item {
+  box-shadow: none;
+}
+
+.ais-ClearRefinements {
+  margin: 1em 0;
+}
+
+.ais-Highlight-highlighted {
+  background-color: #777aaf;
+}
+
+.ais-RangeSlider {
+  width: 80%;
+}
+
+.ais-Panel {
+  margin-bottom: 1em;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+  color: #fff;
+}
+
+ul.carrousel {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul.carrousel li {
+  width: 20%;
+  display: inline-block;
+}
+
+span.ais-RefinementList-labelText {
+  padding-right: 3px;
+}
+
+.ais-InfiniteHits-item img {
+  width: 100%;
+}
+
+li.aa-Item a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: #17012c;
+}

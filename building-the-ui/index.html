@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Algoflix</title>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/instantsearch.css@7/themes/algolia-min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic"
+    />
+    <link rel="stylesheet" href="/src/assets/app.css" />
+    <link rel="stylesheet" href="/src/assets/algoflix.css" />
+
+    <script>
+      var ALGOLIA_INSIGHTS_SRC =
+        "https://cdn.jsdelivr.net/npm/search-insights@2.17.3/dist/search-insights.min.js";
+
+      !(function (e, a, t, n, s, i, c) {
+        (e.AlgoliaAnalyticsObject = s),
+          (e[s] =
+            e[s] ||
+            function () {
+              (e[s].queue = e[s].queue || []).push(arguments);
+            }),
+          (e[s].version = (n.match(/@([^\/]+)\/?/) || [])[1]),
+          (i = a.createElement(t)),
+          (c = a.getElementsByTagName(t)[0]),
+          (i.async = 1),
+          (i.src = n),
+          c.parentNode.insertBefore(i, c);
+      })(window, document, "script", ALGOLIA_INSIGHTS_SRC, "aa");
+
+      window.aa("init", {
+        appId: "DPSO8Y4P4F",
+        apiKey: "1e27d150ddaca332b604f871b7e2d595",
+        useCookie: true,
+        authenticatedUserToken: "testUser",
+      });
+    </script>
+  </head>
+
+  <body>
+    <div id="root" class="container">
+      <header class="header">
+        <a href="/"><h1 class="header-title"></h1></a>
+        <div id="autocomplete"></div>
+      </header>
+      <div id="app"></div>
+    </div>
+
+    <script src="/src/autocomplete.js"></script>
+    <script src="/src/app.js"></script>
+  </body>
+</html>
