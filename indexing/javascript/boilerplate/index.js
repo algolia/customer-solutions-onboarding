@@ -111,7 +111,7 @@ async function applySettings() {
       "searchable(actors)",
       "searchable(categories)",
       "searchable(genres)",
-      "searchable(directors)",
+      "searchable(director)",
       "searchable(categoryPageIdentifiers)",
       "on_sale",
     ],
