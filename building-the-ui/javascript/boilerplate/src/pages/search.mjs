@@ -12,6 +12,7 @@ export function run() {
 
 export const template = `
 <div>
+
   <div id="searchbox">
   ${staticSearchBox}
   </div>
@@ -39,8 +40,10 @@ export const template = `
           ${staticToggleRefinement}          
         </div>      
       </div>
+    </div>
     <div id="hits">  
-    ${staticInfiniteHits}    
+    ${staticInfiniteHits}   
+    </div> 
   </div>
 </div>
 `;
